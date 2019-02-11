@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book a meal || Menus </title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div class="pageframe">
+    <nav>
+        <a href="./index.html"><img src="./images/icon.png"></a>
+            <ul>
+            <li ><a href="./index.html">Home</a></li>
+            <li><a href="./Admin_page.html">Admin</a></li>
+            <li class = "current"><a href="./view_menu_order.html">View Menu</a></li>
+            <li><a href="./Profile_page.html">My Profile</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li id="logout"><a>Logout</a></li>
+        </ul>
+        <span class="open-slide">
+            <a href="#"  class="openMenu">
+                <svg>
+                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                </svg>
+            </a>
+        </span>
+    </nav>
+    <div id="side-menu" class="side-nav">
+        <a href="#" class="closeMenu" >&times;</a>
+        <img src="./images/icon.png">
+        <a href="./index.html">Home</a>
+        <a href="./Admin_page.html">Admin</a>
+        <a class = "current" href="./view_menu_order.html">View Menu</a>
+        <a href="./Profile_page.html">My Profile</a>
+        <a href="./about.html">About</a>
+        <a href="">Logout</a>
+    </div>
+
+    <div class="display">
+        <div class="display-area">
+            <div class="display-box"><img src="./images/Asian-Chicken.jpg" alt="Asian chicken"><p>Asian chicken</p></div>
+            <div class="display-box"><img src="./images/banga-soup.jpg" alt="Banga Soup"><p>Banga Soup</p></div>
+            <div class="display-box"><img src="./images/egusi-soup.jpg" alt="Egusi Soup"><p>Egusi Soup</p></div>
+            <div class="display-box"><img src="./images/fish.jpg" alt="Fish"><p>Fish</p></div>
+            <div class="display-box"><img src="./images/jollof.jpg" alt="Jollof Rice"><p>Jollof Rice</p></div>
+            <div class="display-box"><img src="./images/plantain-porridge.jpg" alt="plantain-porridge"><p>Plantain Porridge</p></div>
+            <div class="display-box"><img src="./images/rice.jpg" alt="Rice and Fish"><p>Rice and Fish</p></div>
+            <div class="display-box"><img src="./images/vegetable.jpg" alt="Vegetable Soup"><p>Vegetable Soup</p></div>
+            <div class="display-box"><img src="./images/delicious-meal.jpg" alt="Fries and Stake"><p>Fries and Stake</p></div>
+        </div>
+        <div class="display-order">
+            <h3>order now</h3>
+            <h3><img src="./images/finger.jpg"></h3>
+            <h3>Today's Menu</h3>
+            <form class="menu-list">
+                <input type="checkbox">Fried rice<br>
+                <input type="checkbox">Jollof rice<br>
+                <input type="checkbox">Egusi soup<br>
+                <input type="checkbox">Grilled chicken<br>
+                <input type="checkbox">Fried Turkey<br>
+                <input type="checkbox">Banga Soup<br>
+                <input type="checkbox">Vegetable Soup<br>
+                <input type="checkbox">Sea food<br>
+                <input type="checkbox">Fried lobster<br>
+                <input class="button" type="submit" value="place order">
+            </form>
+
+        </div>
+
+    </div>
+    <footer class="footer"> COPYRIGHT &COPY; 2019. All Rights Reserved</footer>
+</div>
+<script src="./src/navbar.js"></script>
+</body>
+</html>
