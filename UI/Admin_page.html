@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book a meal || Admin</title>
+    <link rel="stylesheet" href="./src/style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="pageframe">
+
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./view_menu_order.html">Daily Menu</a></li>
+            <li id="logout"><a>Logout</a></li>
+        </ul>
+        <span class="open-slide">
+            <a href="#"  class="openMenu">
+                <svg>
+                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                </svg>
+            </a>
+        </span>
+    </nav>
+    <div id="side-menu" class="side-nav">
+            <a href="#" class="closeMenu" >&times;</a>
+            <img src="./images/icon.png">
+            <a href="index.html">Home</a>
+            <a href="" class="current">Manage Meal</a>
+            <a href="">Add Meal</a>
+            <a href="./view_menu_order.html">Daily Menu</a> 
+            <a href="">Set Menu</a>
+            <a href="">Orders</a>
+            <a href="">Sales</a>
+            <a href="">Logout</a>
+    </div>
+    <div class="grid-container">
+        <aside class="sidenav">
+            <img src="./images/icon.png" alt="Admin pic">
+            <a  class="current">MANAGE MEAL</a>
+            <a id="">ADD MEAL</a>
+            <a id="">SET MENU</a>
+            <a id="">ORDERS</a>
+            <a>SALES</a>
+        </aside>
+    
+        <div class="content-area">
+            <div class="content-header">
+                <h3><img id="Profilepic" src="./images/avatar.jpg"></h3>
+                <h3>ADMIN PANEL</h3>             
+            </div>
+            <div id="overview" class="content-overview">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th>S/N</th>
+                    <th>MEAL</th>
+                    <th>PRICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>1</td>
+                    <td>JOLLOF RICE</td>
+                    <td>2000</td>
+                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>Fried rice</td>
+                    <td>2500</td>
+                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>egusi soup</td>
+                    <td>1500</td>
+                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    </tr>     
+                    <tr>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    </tr>
+                    <tr>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                    <td>6</td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div id="orders" class="content-orders"></div>
+            <div class="content-sales"></div>
+            <div class="content-add"></div>
+            <!-- <div class="content-footer"></div> -->
+        </div>
+        
+    </div>
+           
+<footer class="footer"> COPYRIGHT &COPY; 2019. All Rights Reserved</footer>  
+</div>
+<script src="./src/navbar.js"></script>
+</body>
+</html>
