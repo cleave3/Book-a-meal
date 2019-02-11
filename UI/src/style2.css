@@ -1,0 +1,95 @@
+.pageframe{
+    background:linear-gradient( rgba(0,0,0, 0.5), rgba(0,0,0,0.5)),url(../images/restaurant.jpg) no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pageframe{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.button{
+	font-family: "tahoma", sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+    font-size: 14px; 
+    font-weight: bold;
+	border: none;
+	color: white;
+	background-color: rgb(131, 5, 5);
+    padding: 15px 20px ;
+    border-radius: 10px;
+    transition: all 0.5s;
+
+}
+
+.button:hover{
+    cursor: pointer;
+    color: white;
+    padding: 20px 45px;
+    background-color: black;
+    font-weight: bold;
+
+}
+
+.button:active, nav a:active{
+    background-color: brown;
+
+}
+
+.form-border{
+    width: 340px;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.form-frame{
+    position: relative;
+    max-width: 360px;
+    margin: 100px auto 10px;
+    padding: 45px;
+    text-align: center;
+    
+}
+
+.form input{
+   font-family: "tahoma", sans-serif;
+   outline: 1;
+   background: transparent;
+   border: 1px solid white;
+   width: 100%;
+   margin: 0 0 15px;
+   padding: 10px;
+   font-size: 14px;
+   border-radius: 10px;
+
+}
+
+input, textarea{
+    color: white;
+}
+textarea:focus, input:focus{
+    color: white;
+}
+
+.form label{
+    float: left;
+    font-weight: bold;
+    color: white;
+}
+
+::placeholder{
+    color: rgb(226, 218, 218);
+}
+
+.message{
+    color: white;
+    font-weight: bold;
+}
+
+.message a{
+    color:red;
+    font-weight: bold;
+    text-decoration: none;
+}
