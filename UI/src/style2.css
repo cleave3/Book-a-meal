@@ -39,17 +39,19 @@
 
 .form-border{
     width: 340px;
-    height: 500px;
-    margin: auto;
+    height: 80vh;
+    margin: 0 auto;
     margin-bottom: 50px;
 }
 
 .form-frame{
     position: relative;
     max-width: 360px;
-    margin: 100px auto 10px;
+    margin: 50px auto 10px;
     padding: 45px;
     text-align: center;
+    background-color: white;
+    border-radius: 20px;
     
 }
 
@@ -57,7 +59,7 @@
    font-family: "tahoma", sans-serif;
    outline: 1;
    background: transparent;
-   border: 1px solid white;
+   border: 1px solid rgb(126, 24, 24);
    width: 100%;
    margin: 0 0 15px;
    padding: 10px;
@@ -67,24 +69,24 @@
 }
 
 input, textarea{
-    color: white;
+    color: black;
 }
 textarea:focus, input:focus{
-    color: white;
+    color: black;
 }
 
 .form label{
     float: left;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 ::placeholder{
-    color: rgb(226, 218, 218);
+    color: gray;
 }
 
 .message{
-    color: white;
+    color: blue;
     font-weight: bold;
 }
 

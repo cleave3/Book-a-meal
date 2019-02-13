@@ -72,7 +72,6 @@ svg{
     z-index:1;
     top:0;
     left:0;
-    /* background-color: rgb(48, 24, 24); */
     background:linear-gradient( rgba(0,0,0, 0.5), rgba(0,0,0,0.5)),url(../images/restaurant.jpg) no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
@@ -326,13 +325,15 @@ svg{
 
 }
 
-/* .content-footer{
-    width: 100%;
-    height: 15%;
-    background-color: rgb(236, 233, 233);
-} */
+#defaultDiv{
+  width: 100%;
+  height: 69%;
+  margin: 0;
+  background-color: rgb(236, 233, 233);
+}
 
-.content-overview{
+.tabcontent{
+    display: none;
     width: 100%;
     height: 69%;
     margin: 0;
@@ -340,15 +341,9 @@ svg{
 
 }
 
-.content-orders,
-.content-sales,
-.content-add{
-    display: none;
-    margin-top: 10px;
-    width: 100%;
-    height: 55%;
-    background-color: red;
-    /* background-color: rgb(236, 233, 233); */
+#defaultDiv img{
+  width: 350px;
+  height: 250px;
 }
 
 .table{
@@ -398,4 +393,87 @@ h3{
  font-size: 20px;
  margin-top: 10px;
  text-align: center;
+}
+
+.form{
+  margin: 100px auto;
+  width: 40%;
+}
+
+.form input{
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.add-button{
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: brown;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.add-button:hover{
+  background-color: black;
+  cursor: pointer;
+}
+
+.menu-list{
+  margin: 0 auto;
+  width: 60%;
+}
+
+.menu-list input{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sales{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.orders{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  /* margin: 0 auto; */
+}
+
+#t-sales{
+width: 40%;
+background-color:white;
+height: 400px;
+float: left;
+margin: 30px auto;
+}
+#a-sales{
+width: 40%;
+background-color:white;
+height: 400px;
+float: right;
+margin: 30px auto;
+}
+
+#contentbox{
+  width: 90%;
+  height: 400px;
+  margin: 30px auto;
+  background-color: white;
+}
+
+.sales p{
+  text-align: center;
+  font-size: 30px;
+  color: rgb(8, 182, 23);
+
 }

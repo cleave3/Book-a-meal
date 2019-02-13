@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Book a meal || Admin</title>
     <link rel="stylesheet" href="./src/style3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="pageframe">
@@ -15,7 +14,7 @@
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./view_menu_order.html">Daily Menu</a></li>
-            <li id="logout"><a>Logout</a></li>
+            <li id="logout"><a href="./index.html">Logout</a></li>
         </ul>
         <span class="open-slide">
             <a href="#"  class="openMenu">
@@ -28,90 +27,199 @@
         </span>
     </nav>
     <div id="side-menu" class="side-nav">
-            <a href="#" class="closeMenu" >&times;</a>
-            <img src="./images/icon.png">
-            <a href="index.html">Home</a>
-            <a href="" class="current">Manage Meal</a>
-            <a href="">Add Meal</a>
-            <a href="./view_menu_order.html">Daily Menu</a> 
-            <a href="">Set Menu</a>
-            <a href="">Orders</a>
-            <a href="">Sales</a>
-            <a href="">Logout</a>
-    </div>
-    <div class="grid-container">
-        <aside class="sidenav">
-            <img src="./images/icon.png" alt="Admin pic">
-            <a  class="current">MANAGE MEAL</a>
-            <a id="">ADD MEAL</a>
-            <a id="">SET MENU</a>
-            <a id="">ORDERS</a>
-            <a>SALES</a>
-        </aside>
-    
-        <div class="content-area">
-            <div class="content-header">
-                <h3><img id="Profilepic" src="./images/avatar.jpg"></h3>
-                <h3>ADMIN PANEL</h3>             
-            </div>
-            <div id="overview" class="content-overview">
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th>S/N</th>
-                    <th>MEAL</th>
-                    <th>PRICE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>JOLLOF RICE</td>
-                    <td>2000</td>
-                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>Fried rice</td>
-                    <td>2500</td>
-                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
-                    </tr>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td>egusi soup</td>
-                    <td>1500</td>
-                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
-                    </tr>     
-                    <tr>
-                    <td>4</td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
-                    </tr>
-                    <tr>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
-                    </tr>
-                    </tr>
-                    <tr>
-                    <td>6</td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div id="orders" class="content-orders"></div>
-            <div class="content-sales"></div>
-            <div class="content-add"></div>
-            <!-- <div class="content-footer"></div> -->
+        <a href="#" class="closeMenu" >&times;</a>
+        <img src="./images/icon.png">
+        <a href="./index.html">Home</a>
+        <a href="#" class="tab" onclick="openTab(event, 'managemeal')">Manage Meal</a>
+        <a href="#" class="tab" onclick="openTab(event, 'addmeal')">Add Meal</a>
+        <a href="./view_menu_order.html">Daily Menu</a> 
+        <a href="#" class="tab" onclick="openTab(event, 'setmenu')">Set Menu</a>
+        <a href="#" class="tab" onclick="openTab(event, 'orders')">Orders</a>
+        <a href="#" class="tab" onclick="openTab(event, 'sales')">Sales</a>
+        <a href="./index.html">Logout</a>
+</div>
+<div class="grid-container">
+    <aside class="sidenav">
+        <img src="./images/icon.png" alt="Admin pic">
+        <a class="tab" onclick="openTab(event, 'managemeal')">MANAGE MEAL</a>
+        <a class="tab" onclick="openTab(event, 'addmeal')">ADD MEAL</a>
+        <a class="tab" onclick="openTab(event, 'setmenu')">SET MENU</a>
+        <a class="tab" onclick="openTab(event, 'orders')">ORDERS</a>
+        <a class="tab" onclick="openTab(event, 'sales')">SALES</a>
+    </aside>
+
+    <div class="content-area">
+        <div class="content-header">
+            <h3><img id="Profilepic" src="./images/avatar.jpg"></h3>
+            <h3>ADMIN PANEL</h3>             
         </div>
-        
+        <div id="defaultDiv">
+            <h3>NAME: OWHIRORO CLEAVE</h3>
+            <h3>GRADE: SUPER CHEF</h3>
+            <h3>RATINGS:</h3>
+            <h3><img src="./images/5stars.png"></h3>
+        </div>
+        <div id="managemeal" class="tabcontent">
+        <table class="table">
+            <thead>
+                <tr>
+                <th>S/N</th>
+                <th>MEAL</th>
+                <th>PRICE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>1</td>
+                <td>JOLLOF RICE</td>
+                <td>2000</td>
+                <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Fried rice</td>
+                <td>2500</td>
+                <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                </tr>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>egusi soup</td>
+                <td>1500</td>
+                <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                </tr>     
+                <tr>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td></td>
+                <td></td>
+                <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                </tr>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td></td>
+                <td></td>
+                <td><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div id="orders" class="tabcontent">
+            <table class="table">
+                    <thead>
+                        <tr>
+                        <th>S/N</th>
+                        <th>CUSTOMER</th>
+                        <th>MEAL</th>
+                        <th>PRICE</th>
+                        <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>1</td>
+                        <td>John Smith</td>
+                        <td>JOLLOF RICE</td>
+                        <td>2000</td>
+                        <td>Delivered</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>Okocha Emmanuel</td>
+                        <td>Fried rice</td>
+                        <td>2500</td>
+                        <td>Delivered</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <td>3</td>
+                        <td>Ajiri Thomas</td>
+                        <td>egusi soup</td>
+                        <td>1500</td>
+                        <td>Delivered</td>
+                        </tr>
+                        <tr>
+                        <td>4</td>
+                        <td>John Smith</td>
+                        <td>JOLLOF RICE</td>
+                        <td>2000</td>
+                        <td>Delivered</td>
+                        </tr>
+                        <tr>
+                        <td>5</td>
+                        <td>Okocha Emmanuel</td>
+                        <td>Fried rice</td>
+                        <td>2500</td>
+                        <td>Delivered</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <td>6</td>
+                        <td>Ajiri Thomas</td>
+                        <td>egusi soup</td>
+                        <td>1500</td>
+                        <td>Delivered</td>
+                        </tr>
+                    
+                    </tbody>
+                    </table>
+        </div>
+        <div id="sales" class="tabcontent">
+            <div class="sales">
+                <div id="t-sales">
+                    <h3>TODAY'S SALES</h3>
+                    <h3>Orders:</h3>
+                    <p>207</p>
+                    <h3>Amount:</h3>
+                    <p>&#8358 307,800</p>
+
+                </div>
+                <div id="a-sales">
+                    <h3>THIS MONTH'S SALES</h3>
+                    <h3>Orders:</h3>
+                    <p>567</p>
+                    <h3>Amount:</h3>
+                    <p>&#8358 907,800</p>
+                </div>
+            </div>
+        </div>
+        <div id="setmenu" class="tabcontent">
+            <h3>MENU ITEMS</h3>
+            <form class="menu-list">
+                    <input type="checkbox">Fried rice
+                    <input type="checkbox">Jollof rice
+                    <input type="checkbox">Egusi soup
+                    <input type="checkbox">Grilled chicken
+                    <input type="checkbox">Fried Turkey
+                    <input type="checkbox">Banga Soup
+                    <input type="checkbox">Vegetable Soup
+                    <input type="checkbox">Sea food
+                    <input type="checkbox">Fried lobster
+                    <input type="checkbox">Plantain porridge
+                    <input type="checkbox">Spaghetti and meatballs
+                    <input type="checkbox">Fries and Stake
+                    <input type="checkbox">Chicken Salad
+                    <h3><input class="add-button" type="submit" value="set menu"></h3>
+                </form>
+        </div>
+        <div id="addmeal" class="tabcontent">
+            <div class="form">
+            <form>
+                <input type="text" placeholder="Meal Name" required>
+                <input type="tel" maxlength="5" placeholder="Price" required>
+                <h3><button class = "add-button" type="submit">Add Meal</button></h3>
+            </form>
+            </div>
+        </div>
     </div>
+    
+</div>
            
 <footer class="footer"> COPYRIGHT &COPY; 2019. All Rights Reserved</footer>  
 </div>
