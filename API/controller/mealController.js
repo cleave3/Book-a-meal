@@ -51,10 +51,30 @@ const getAmeal = (req, res) => {
   });
 };
 
+// TO UPDATE A MEAL OPTION
+const updateAmeal = (req, res) => {
+  const meal = dummydb.meals.find(data => data.id === parseInt(req.params.id));
+  if (!meal) res.status(404).send('meal with the given id was not found');
+
+  const { error } = validateMeal(req.body);
+  if (error) {
+    return res.status(400).send(error.details[0].message);
+  }
+  meal.name = req.body.name,
+  meal.size = req.body.size,
+  meal.price = req.body.price;
+
+  res.json({
+    status: 201,
+    data: meal,
+  });
+};
+
 const control = {
   getAllMeals,
   addMeal,
   getAmeal,
+  updateAmeal,
 };
 
 export { control };
