@@ -1,0 +1,43 @@
+{
+  "name": "book-a-meal",
+  "version": "1.0.0",
+  "description": "Book a meal is a simple application for ordering meals",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleave3/Book-a-meal.git"
+  },
+  "keywords": [
+    "meals",
+    "food",
+    "delicious"
+  ],
+  "author": "cleave owhiroro <owhiroroeghele@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleave3/Book-a-meal/issues"
+  },
+  "homepage": "https://github.com/cleave3/Book-a-meal#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "chai-http": "^4.2.1",
+    "express": "^4.16.4",
+    "joi": "^14.3.1"
+  }
+}
