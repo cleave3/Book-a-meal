@@ -5,7 +5,8 @@ const validateMeal = (meals) => {
   const schema = {
     name: Joi.string().min(3).required(),
     size: Joi.string().required(),
-    price: Joi.number().integer().min(500).max(3000).required(),
+    price: Joi.number().integer().min(500).max(3000)
+      .required(),
   };
 
   return Joi.validate(meals, schema);
@@ -40,9 +41,20 @@ const addMeal = (req, res) => {
   });
 };
 
+// TO GET A SINGLE MEAL OPTION
+const getAmeal = (req, res) => {
+  const meal = dummydb.meals.find(data => data.id === parseInt(req.params.id));
+  if (!meal) res.status(404).send('meal with the given id was not found');
+  res.json({
+    status: 200,
+    data: meal,
+  });
+};
+
 const control = {
   getAllMeals,
   addMeal,
+  getAmeal,
 };
 
 export { control };
