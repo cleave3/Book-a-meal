@@ -3,8 +3,10 @@ import dummydb from '../Dummydb/dummydb';
 
 const validateMeal = (meals) => {
   const schema = {
-    name: Joi.string().min(3).required(),
-    size: Joi.string().required(),
+    name: Joi.string().trim().min(3).max(20)
+      .required(),
+    size: Joi.string().trim().min(5).max(15)
+      .required(),
     price: Joi.number().integer().min(500).max(3000)
       .required(),
   };
@@ -43,8 +45,11 @@ const addMeal = (req, res) => {
 
 // TO GET A SINGLE MEAL OPTION
 const getAmeal = (req, res) => {
-  const meal = dummydb.meals.find(data => data.id === parseInt(req.params.id));
-  if (!meal) res.status(404).send('meal with the given id was not found');
+  const meal = dummydb.meals.find(data => data.id === Number(req.params.id));
+  if (!meal) res.status(404).json({
+    status: 404,
+    message: 'Meal with the given id was not found',
+  });
   res.json({
     status: 200,
     data: meal,
@@ -53,8 +58,11 @@ const getAmeal = (req, res) => {
 
 // TO UPDATE A MEAL OPTION
 const updateAmeal = (req, res) => {
-  const meal = dummydb.meals.find(data => data.id === parseInt(req.params.id));
-  if (!meal) res.status(404).send('meal with the given id was not found');
+  const meal = dummydb.meals.find(data => data.id === Number(req.params.id));
+  if (!meal) res.status(404).json({
+    status: 404,
+    message: 'Meal with the given id was not found',
+  });
 
   const { error } = validateMeal(req.body);
   if (error) {
@@ -72,8 +80,11 @@ const updateAmeal = (req, res) => {
 
 // TO REMOVE A MEAL OPTION
 const deleteAmeal = (req, res) => {
-  const meal = dummydb.meals.find(data => data.id === parseInt(req.params.id));
-  if (!meal) res.status(404).send('meal with the given id was not found');
+  const meal = dummydb.meals.find(data => data.id === Number(req.params.id));
+  if (!meal) res.status(404).json({
+    status: 404,
+    message: 'Meal with the given id was not found',
+  });
 
   const index = dummydb.meals.indexOf(meal);
   dummydb.meals.splice(index, 1);
