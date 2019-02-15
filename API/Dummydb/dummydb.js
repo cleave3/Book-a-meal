@@ -28,5 +28,4 @@ export default {
       price: '1,500',
     },
   ],
-}
-;
+};
