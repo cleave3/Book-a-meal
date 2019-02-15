@@ -16,6 +16,12 @@ const validateMeal = (meals) => {
 
 // TO GET ALL MEAL OPTIONS
 const getAllMeals = (req, res) => {
+  if (!dummydb.meals) {
+    res.json({
+      status: 404,
+      message: 'No meal was found',
+    });
+  }
   res.json({
     status: 200,
     data: dummydb.meals,
@@ -46,10 +52,10 @@ const addMeal = (req, res) => {
 // TO GET A SINGLE MEAL OPTION
 const getAmeal = (req, res) => {
   const meal = dummydb.meals.find(data => data.id === Number(req.params.id));
-  if (!meal) res.status(404).json({
+  if (!meal) {res.status(404).json({
     status: 404,
     message: 'Meal with the given id was not found',
-  });
+  });}
   res.json({
     status: 200,
     data: meal,
@@ -59,10 +65,10 @@ const getAmeal = (req, res) => {
 // TO UPDATE A MEAL OPTION
 const updateAmeal = (req, res) => {
   const meal = dummydb.meals.find(data => data.id === Number(req.params.id));
-  if (!meal) res.status(404).json({
+  if (!meal) {res.status(404).json({
     status: 404,
     message: 'Meal with the given id was not found',
-  });
+  });}
 
   const { error } = validateMeal(req.body);
   if (error) {
@@ -81,10 +87,10 @@ const updateAmeal = (req, res) => {
 // TO REMOVE A MEAL OPTION
 const deleteAmeal = (req, res) => {
   const meal = dummydb.meals.find(data => data.id === Number(req.params.id));
-  if (!meal) res.status(404).json({
+  if (!meal) {res.status(404).json({
     status: 404,
     message: 'Meal with the given id was not found',
-  });
+  });}
 
   const index = dummydb.meals.indexOf(meal);
   dummydb.meals.splice(index, 1);
@@ -95,7 +101,7 @@ const deleteAmeal = (req, res) => {
   });
 };
 
-const control = {
+const mealControl = {
   getAllMeals,
   addMeal,
   getAmeal,
@@ -103,4 +109,4 @@ const control = {
   deleteAmeal,
 };
 
-export { control };
+export { mealControl };
