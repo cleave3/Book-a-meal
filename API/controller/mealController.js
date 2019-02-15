@@ -29,7 +29,7 @@ const addMeal = (req, res) => {
 
   const meal = {
     id: dummydb.meals.length + 1,
-    name: dummydb.meals.name,
+    name: req.body.name,
     size: req.body.size,
     price: req.body.price,
   };
@@ -70,11 +70,26 @@ const updateAmeal = (req, res) => {
   });
 };
 
+// TO REMOVE A MEAL OPTION
+const deleteAmeal = (req, res) => {
+  const meal = dummydb.meals.find(data => data.id === parseInt(req.params.id));
+  if (!meal) res.status(404).send('meal with the given id was not found');
+
+  const index = dummydb.meals.indexOf(meal);
+  dummydb.meals.splice(index, 1);
+
+  res.json({
+    status: 200,
+    data: dummydb.meals,
+  });
+};
+
 const control = {
   getAllMeals,
   addMeal,
   getAmeal,
   updateAmeal,
+  deleteAmeal,
 };
 
 export { control };
