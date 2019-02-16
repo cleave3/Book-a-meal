@@ -5,7 +5,9 @@ const validateMeal = (meals) => {
   const schema = {
     name: Joi.string().trim().min(3).max(20)
       .required(),
-    size: Joi.string().trim().min(5).max(15)
+    size: Joi.string().trim().valid('small', 'medium', 'large').insensitive()
+      .min(5)
+      .max(15)
       .required(),
     price: Joi.number().integer().min(500).max(3000)
       .required(),
@@ -78,8 +80,8 @@ const updateAmeal = (req, res) => {
   if (error) {
     return res.status(400).send(error.details[0].message);
   }
-  meal.name = req.body.name,
-  meal.size = req.body.size,
+  meal.name = req.body.name;
+  meal.size = req.body.size;
   meal.price = req.body.price;
 
   res.json({

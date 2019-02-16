@@ -14,6 +14,7 @@ app.delete('/api/v1/meals/:id', mealControl.deleteAmeal);
 
 // ROUTE FOR MENU
 app.get('/api/v1/menu/', menuControl.getMenu);
+app.post('/api/v1/menu/', menuControl.addToMenu);
 
 
 export default app;
