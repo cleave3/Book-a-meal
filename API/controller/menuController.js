@@ -19,12 +19,12 @@ const validateMenu = (menu) => {
 // TO GET MENU
 const getMenu = (req, res) => {
   if (!dummydb.menu) {
-    res.json({
+    return res.json({
       status: 404,
       message: 'Menu not found',
     });
   }
-  res.json({
+  return res.json({
     status: 200,
     data: dummydb.menu,
   });
@@ -34,7 +34,7 @@ const getMenu = (req, res) => {
 const addToMenu = (req, res) => {
   const same = dummydb.menus.find(data => data.name === String(req.body.name) && data.size === String(req.body.size));
   if (same) {
-    res.status(409).json({
+    return res.status(409).json({
       status: 409,
       message: 'This meal already exist in menu',
     });
@@ -53,7 +53,7 @@ const addToMenu = (req, res) => {
   };
 
   dummydb.menus.push(menu);
-  res.json({
+  return res.json({
     status: 201,
     data: menu,
   });
