@@ -18,6 +18,6 @@ app.post('/api/v1/menu/', menuControl.addToMenu);
 
 // ROUTE FOR ORDERS
 app.get('/api/v1/orders/', orderControl.getAllOrders);
-
+app.post('/api/v1/orders', orderControl.addOrder);
 
 export default app;
