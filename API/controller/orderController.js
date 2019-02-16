@@ -51,9 +51,25 @@ const addOrder = (req, res) => {
   });
 };
 
+// TO GET A SINGLE ORDER
+const getAnOrder = (req, res) => {
+  const order = dummydb.orders.find(data => data.id === Number(req.params.id));
+  if (!order) {
+    return res.status(404).json({
+      status: 404,
+      message: 'Order with the given id was not found',
+    });
+  }
+  return res.json({
+    status: 200,
+    data: order,
+  });
+};
+
 const orderControl = {
   getAllOrders,
   addOrder,
+  getAnOrder,
 };
 
 export { orderControl };
