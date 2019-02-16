@@ -66,10 +66,35 @@ const getAnOrder = (req, res) => {
   });
 };
 
+// TO UPDATE AN ORDER
+const updateAnOrder = (req, res) => {
+  const order = dummydb.orders.find(data => data.id === Number(req.params.id));
+  if (!order) {
+    return res.status(404).json({
+      status: 404,
+      message: 'Order with the given id was not found',
+    });
+  }
+
+  const { error } = validateOrder(req.body);
+  if (error) {
+    return res.status(400).send(error.details[0].message);
+  }
+  order.name = req.body.name;
+  order.size = req.body.size;
+  order.price = req.body.price;
+
+  return res.json({
+    status: 201,
+    data: order,
+  });
+};
+
 const orderControl = {
   getAllOrders,
   addOrder,
   getAnOrder,
+  updateAnOrder,
 };
 
 export { orderControl };
