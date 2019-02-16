@@ -90,11 +90,31 @@ const updateAnOrder = (req, res) => {
   });
 };
 
+// TO REMOVE AN ORDER
+const deleteAnOrder = (req, res) => {
+  const order = dummydb.orders.find(data => data.id === Number(req.params.id));
+  if (!order) {
+    return res.status(404).json({
+      status: 404,
+      message: 'Order with the given id was not found',
+    });
+  }
+
+  const index = dummydb.orders.indexOf(order);
+  dummydb.orders.splice(index, 1);
+
+  return res.json({
+    status: 200,
+    data: dummydb.orders,
+  });
+};
+
 const orderControl = {
   getAllOrders,
   addOrder,
   getAnOrder,
   updateAnOrder,
+  deleteAnOrder,
 };
 
 export { orderControl };
