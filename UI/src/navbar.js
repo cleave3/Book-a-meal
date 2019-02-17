@@ -1,4 +1,4 @@
-// TO MAKE NAVIGATION BAR RESPONSIVE
+/*************************** TO OPEN/CLOSE SIDE NAVIGATION **************************/
 const open = document.querySelector('.openMenu');
 const openSlideMenu = () => {
     document.getElementById('side-menu').style.width = '200px';
@@ -12,8 +12,7 @@ const closeSlideMenu = () =>{
 close.addEventListener('click',closeSlideMenu);
 
 
-//TO ENABLE TAB SWITCHING
-
+/*************************** TO ENABLE TAB SWITCHING **************************/
 function openTab(evt, tabName) {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent"); 
@@ -29,3 +28,25 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " current";
 }
+
+/*************************** MODAL TO CONFIRM ORDER **************************/
+const orderButton = document.querySelector('#order-button');
+const span = document.querySelector(".close");
+
+const openModal= () =>{
+  document.querySelector('.confirm-order').style.display = 'block';
+};
+orderButton.addEventListener('click', openModal);
+
+const closeModal = () =>{  
+  document.querySelector('.confirm-order').style.display = 'none';
+};
+span.addEventListener('click', closeModal);
+
+
+const confirmed = document.getElementById('confirm-button');
+const thanks = () =>{
+  confirm('PROCEED WITH ORDER ?');
+  document.querySelector('.confirm-order').style.display = 'none';
+}
+confirmed.addEventListener('click', thanks);
