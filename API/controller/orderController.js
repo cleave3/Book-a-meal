@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import shortid from 'shortid';
 import dummydb from '../Dummydb/dummydb';
 
 const validateOrder = (menu) => {
@@ -38,7 +39,7 @@ const addOrder = (req, res) => {
   }
 
   const order = {
-    id: dummydb.orders.length + 1,
+    id: shortid.generate(),
     name: req.body.name,
     size: req.body.size,
     price: req.body.price,
