@@ -4,7 +4,7 @@
   "description": "Book a meal is a simple application for ordering meals",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js",
+    "start": "babel-node index.js",
     "test": "  nyc --reporter=html --reporter=text mocha --require babel-register --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
