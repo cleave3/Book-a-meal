@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test": "mocha"
+    "test": "  nyc --reporter=html --reporter=text mocha --require babel-register --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "repository": {
     "type": "git",
@@ -23,22 +26,25 @@
   },
   "homepage": "https://github.com/cleave3/Book-a-meal#readme",
   "devDependencies": {
-    "chai": "^4.2.0",
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "coveralls": "^3.0.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.3.0"
   },
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "express": "^4.16.4",
     "joi": "^14.3.1",
+    "mocha": "^6.0.0",
     "shortid": "^2.2.14"
   }
 }

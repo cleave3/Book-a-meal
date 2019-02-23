@@ -32,6 +32,13 @@ const getAllMeals = (req, res) => {
 
 // TO ADD A MEAL OPTION
 const addMeal = (req, res) => {
+  const same = dummydb.meals.find(data => data.name === String(req.body.name) && data.size === String(req.body.size));
+  if (same) {
+    return res.status(409).json({
+      status: 409,
+      message: 'This meal already exist',
+    });
+  }
   const { error } = validateMeal(req.body);
   if (error) {
     return res.status(400).send(error.details[0].message);
