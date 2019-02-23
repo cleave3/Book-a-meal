@@ -29,7 +29,7 @@ export default {
     },
   ],
 
-  menu: [
+  menus: [
     {
       id: 1,
       name: 'fried rice',

@@ -18,7 +18,7 @@ const validateMenu = (menu) => {
 
 // TO GET MENU
 const getMenu = (req, res) => {
-  if (!dummydb.menu) {
+  if (!dummydb.menus) {
     return res.json({
       status: 404,
       message: 'Menu not found',
@@ -26,7 +26,7 @@ const getMenu = (req, res) => {
   }
   return res.json({
     status: 200,
-    data: dummydb.menu,
+    data: dummydb.menus,
   });
 };
 
