@@ -1,7 +1,6 @@
 # Book-a-meal
 [![Build Status](https://travis-ci.org/cleave3/Book-a-meal.svg?branch=develop)](https://travis-ci.org/cleave3/Book-a-meal)
-[![Coverage Status](https://coveralls.io/repos/github/cleave3/Book-a-meal/badge.svg)](https://coveralls.io/github/cleave3/Book-a-meal)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/cleave3/Book-a-meal.svg)
+[![Coverage Status](https://coveralls.io/repos/github/cleave3/Book-a-meal/badge.svg)](https://coveralls.io/github/cleave3/Book-a-meal)<br>
 This is Book-a-meal version 1
 
 # What is Book-a-meal ?
