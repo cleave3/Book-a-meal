@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book a meal || Checkout </title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="pageframe">
+    <nav>
+        <a href="./index.html"><img src="./images/icon.png"></a>
+            <ul>
+            <li ><a href="./index.html">Home</a></li>
+            <li><a href="./Profile_page.html">My Profile</a></li>
+            <a id="logout">Logout</a>
+            <a href="./checkout_payment.html"><i id="cart" class="fa fa-shopping-cart"></i></a>
+            
+        </ul>
+        <span class="open-slide">
+            <a href="#"  class="openMenu">
+                <svg>
+                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                </svg>
+            </a>
+        </span>
+    </nav>
+    <div id="side-menu" class="side-nav">
+        <a href="#" class="closeMenu" >&times;</a>
+        <img src="./images/icon.png">
+        <a href="./checkout_payment.html"><i id="side-cart" class="fa fa-shopping-cart"></i></a>
+        <a href="./index.html">Home</a>
+        <a href="./Profile_page.html">My Profile</a>
+        <a href="">Logout</a>
+    </div>
+<div class="checkout-background">
+    <div class="display">
+        <div class="checkout-area">
+            <h2>CART</h2>
+            <hr>
+            <table class="table">
+                <thead>
+                <tr>
+                <th>ITEM</th>
+                <th>SIZE</th>
+                <th>QUANTITY</th>
+                <th>PRICE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Fried Rice</td>
+                <td>
+                <select>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                </td>
+                <td><input id="qty" type="number" value="1" min="1"></td>
+                <td id="price">&#8358 1,500</td>
+                <td><button class="table-button">Remove</button></td>
+                </tr>
+                <tr>
+                <td>Jollof Rice</td>
+                <td>
+                <select>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                </td>
+                <td><input id="qty" type="number" value="1" min="1"></td>
+                <td id="price">&#8358 1,500</td>
+                <td><button class="table-button">Remove</button></td>
+                <tr>
+                <td>Banga Soup</td>
+                <td>
+                <select>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                </td>
+                <td><input id="qty" type="number" value="1" min="1"></td>
+                <td id="price">&#8358 800</td>
+                <td><button class="table-button">Remove</button></td>
+            </tr>
+                </tr>
+           </tbody>
+           </table> 
+           <div class="order-amount">
+            <div>
+                <p><strong>Subtotal</strong></p>
+                <p>&#8358; 3,800</p>
+            </div>
+            <div>
+                <p><strong>Delivery Fee</strong></p>
+                <p>&#8358; 300</p>
+            </div>
+            <div>
+                <p><strong>Total</strong></p>
+                <h2>&#8358; 4,100</h2>
+            </div>
+            </div>
+            <br />
+            <div class="button-check">
+            <a class="shopMore" href="./view_menu_order.html">
+                Continue Shoping
+            </a>
+            <button class="proceed">Proceed</button>
+            </div>
+        </div>
+        <div class="confirm-order">
+                <div class="order-content">
+                    <span class="close">&times;</span>
+                    <h3>PAYMENT</h3>
+                    <div class="forms-frame">
+                    <form class="forms">
+                    <label for="Name">Names</label>
+                    <input type="text" maxlength="25" placeholder="Names" required><br>
+                    <label for="Address">Delivery Address</label>
+                    <input type="text" placeholder="Address" required>
+                    <label for="Phone">Phone</label>
+                    <input placeholder="08X-XXXX-XXXX" required>
+                    <label for="Payment">Choose payment method</label>
+                    <select>
+                        <option>Pay on deliver</option>
+                        <option>Card payment</option>
+                    </select>
+                    <h3 id="cbtn"><a href="./view_menu_order.html" class="confirm-button">CONFIRM</a></h3>
+                    </form>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="footer"> COPYRIGHT &COPY; 2019. All Rights Reserved</footer>
+</div>
+<script src="./src/navbar.js"></script>
+</body>
+</html>

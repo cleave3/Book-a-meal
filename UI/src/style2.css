@@ -51,7 +51,6 @@
     padding: 45px;
     text-align: center;
     background-color: white;
-    border-radius: 20px;
     
 }
 
@@ -59,12 +58,12 @@
    font-family: "tahoma", sans-serif;
    outline: 1;
    background: transparent;
-   border: 1px solid rgb(126, 24, 24);
+   border: none;
+   border-bottom: 1px solid rgb(126, 24, 24);
    width: 100%;
    margin: 0 0 15px;
    padding: 10px;
    font-size: 14px;
-   border-radius: 10px;
 
 }
 
@@ -73,6 +72,9 @@ input, textarea{
 }
 textarea:focus, input:focus{
     color: black;
+    border: none;
+   /* border-bottom: 1px solid rgb(126, 24, 24); */
+
 }
 
 .form label{
