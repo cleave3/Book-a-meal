@@ -337,6 +337,7 @@ svg{
     height: 69%;
     margin: 0;
     background-color: rgb(236, 233, 233);
+    overflow: scroll;
 
 }
 
@@ -350,6 +351,7 @@ svg{
   width: 90%;
   font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: auto;
 }
 
 .table-button{
@@ -425,6 +427,7 @@ h3{
 .menu-list{
   margin: 0 auto;
   width: 60%;
+  overflow: scroll;
 }
 
 .menu-list input{
@@ -475,4 +478,18 @@ margin: 30px auto;
   font-size: 30px;
   color: rgb(8, 182, 23);
 
+}
+
+#cart{
+  font-size:36px; 
+  color: orange; 
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+#side-cart{
+  font-size:36px; 
+  color: orange; 
+  margin-right: 20px;
 }

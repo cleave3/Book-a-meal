@@ -145,7 +145,7 @@ nav img{
     overflow: hidden;
 }
 #showcase{
-    min-height: 500px;
+    min-height: 300px;
     background: linear-gradient( rgba(0,0,0, 0.5), rgba(0,0,0,0.5)),url(../images/food_table.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -155,7 +155,7 @@ nav img{
 }
 
 #showcase h1{
-    margin-top: 150px;
+    margin-top: 50px;
     font-size: 40px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -178,7 +178,7 @@ nav img{
     border-radius: 10px;
     border: 1px solid white;
     transition: all 0.5s;
-
+    margin-bottom: 30px;
 }
 .showcasebutton:hover{
     cursor: pointer;
@@ -270,7 +270,9 @@ h3 img{
     .footer,
     form,
     .form-border,
-    #logout{
+    .display-area,
+    .proceed,
+    .shopMore{
         float: none;
         text-align: center;
         width: 100%;
@@ -312,7 +314,7 @@ h3 img{
 
 .display-area{
     background-color: blue;
-    width: 65%;
+    width: 100%;
     display: grid;
     grid-template-areas: auto auto auto;
     padding: 10px;
@@ -327,7 +329,6 @@ h3 img{
 
 .display-order{
     width: 35%;
-    border: 1px solid orange;
 
 }
 
@@ -429,10 +430,11 @@ form input{
 }
 
 .order-content{
-    margin: 0 auto;
-    width: 30%;
-    border-radius: 10px;
     background-color: white;
+    width: 30%;
+    min-width: 240px;
+    margin: 50px auto;
+    border-radius: 5px;
 }
 
 h2{
@@ -448,23 +450,149 @@ h2{
     color: rgb(6, 158, 6);
 }
 
-#confirm-button{
+.confirm-button{
     background-color: green;
     border: none;
-    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    
+    text-decoration: none;
+}
+#cbtn{
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+.confirm-button:hover{
+    background-color: rgb(7, 77, 7);
+    cursor: pointer;
+}
+
+.confirm-button:active{
+    background-color: black;
+    cursor: pointer;
+}
+
+.checkout-background{
+    background: linear-gradient( rgba(212, 207, 207, 0.8), rgba(218, 205, 205, 0.8)),url(../images/food.jpg);
+}
+.checkout-area{
+    background-color: white;
+    min-width: 50%;
+    margin: 50px auto;
+    border-radius: 5px;
+    overflow: auto;
+
+}
+
+.button-check{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.shopMore{
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.shopMore:hover{
+    color: rgb(184, 122, 7);
+}
+
+.proceed{
+    background-color: green;
+    border: none;
     padding: 15px;
     width: 100px;
     color: white;
     text-align: center;
     margin-bottom: 10px;
+    font-weight: bold;
+    float: right;
+    margin-bottom: 30px;
 }
-
-#confirm-button:hover{
+.proceed:hover{
     background-color: rgb(7, 77, 7);
     cursor: pointer;
 }
 
-#confirm-button:active{
+.proceed:active{
     background-color: black;
     cursor: pointer;
+}
+
+.table{
+    margin: 0 auto;
+    text-align: center;
+    line-height: 3;
+    width: 100%;
+}
+
+.table input{
+    text-align: center;
+    width: 30px;
+}
+
+.order-amount{
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+}
+
+.forms-frame{
+    position: relative;
+    max-width: 320px;
+    height: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.forms input{
+    font-family: "tahoma", sans-serif;
+    outline: 1;
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+ }
+
+ .forms label{
+    float: left;
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forms select{
+    margin-top: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+::placeholder{
+    color: gray;
+    font-size: 15px;
+}
+
+#cart{
+    font-size:36px; 
+    color: orange; 
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+#side-cart{
+    font-size:36px; 
+    color: orange; 
+    margin-right: 20px;
 }

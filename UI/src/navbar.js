@@ -30,7 +30,7 @@ function openTab(evt, tabName) {
 }
 
 /*************************** MODAL TO CONFIRM ORDER **************************/
-const orderButton = document.querySelector('#order-button');
+const orderButton = document.querySelector('.proceed');
 const span = document.querySelector(".close");
 
 const openModal= () =>{
@@ -43,10 +43,10 @@ const closeModal = () =>{
 };
 span.addEventListener('click', closeModal);
 
-
-const confirmed = document.getElementById('confirm-button');
-const thanks = () =>{
-  confirm('PROCEED WITH ORDER ?');
+/*************************** TO CONFIRM ORDER **************************/
+const ordered = document.querySelector('.confirm-button');
+const completed = () =>{
   document.querySelector('.confirm-order').style.display = 'none';
+  confirm('CONFIRM ORDER')
 }
-confirmed.addEventListener('click', thanks);
+ordered.addEventListener('click', completed);
