@@ -4,7 +4,11 @@ class Response {
   }
 
   static async badRequest(res, statusCode, error) {
-    return res.status(statusCode).json({ status: false, message: error });
+   return res.status(statusCode).json({ status: false, error: [ error ]});
+  }
+
+  static async validationError(res, statusCode, error) {
+    return res.status(statusCode).json({ status: false, errors: error.map(err => err) });
   }
 }
 
