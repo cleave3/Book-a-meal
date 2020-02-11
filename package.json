@@ -4,8 +4,8 @@
 	"description": "[![Build Status](https://travis-ci.org/cleave3/Book-a-meal.svg?branch=develop)](https://travis-ci.org/cleave3/Book-a-meal)\r [![Coverage Status](https://coveralls.io/repos/github/cleave3/Book-a-meal/badge.svg)](https://coveralls.io/github/cleave3/Book-a-meal)<br>\r This is Book-a-meal version 1",
 	"main": "index.js",
 	"scripts": {
-		"start": "node --exec babel-node index.js",
-		"dev": "nodemon --exec babel-node index.js",
+		"start": "node --exec babel-node src/index.js",
+		"dev": "nodemon --exec babel-node src/index.js",
 		"migration": "npx sequelize db:migrate",
 		"undo-migration": "npx sequelize db:migrate:undo:all ",
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -40,8 +40,7 @@
 		"pg": "^7.17.0",
 		"pg-hstore": "^2.3.3",
 		"sequelize": "^5.21.3",
-		"sequelize-cli": "^5.5.1",
-		"serve-index": "^1.9.1"
+		"sequelize-cli": "^5.5.1"
 	},
 	"devDependencies": {
 		"morgan": "^1.9.1",

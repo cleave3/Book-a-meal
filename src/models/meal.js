@@ -26,12 +26,11 @@ module.exports = (sequelize, DataTypes) => {
 		{}
 	);
 	Meal.associate = models => {
-		Meal.belongsTo(models.Menu, {
-			foreignKey: 'meal_id'
-		});
-		Meal.belongsToMany(models.Categories, {
-			foreignKey: 'meal_id',
-			through: 'Mealcategory'
+		// Meal.belongsTo(models.Menu, {
+		// 	foreignKey: 'meal_id'
+		// });
+		Meal.belongsTo(models.Categories, {
+			foreignKey: 'category_id'
 		});
 	};
 	return Meal;

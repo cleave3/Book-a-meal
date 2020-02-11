@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER,
 				allowNull: false
 			},
-			product_id: {
+			meal_id: {
 				type: DataTypes.INTEGER,
 				allowNull: false
 			}
@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
 	Cart.associate = models => {
 		Cart.belongsTo(models.User, {
 			foreignKey: 'user_id',
+			onDelete: 'CASCADE'
+		});
+		Cart.hasMany(models.Meal, {
+			foreignKey: 'meal_id',
 			onDelete: 'CASCADE'
 		});
 	};

@@ -9,13 +9,13 @@ const { success, badRequest, validationError, successMessage } = Response;
 const { ValidateRegistration, validateLogin } = Validator;
 
 class userController {
-	static async signup(req, res) {
+	static async signup({ body }, res) {
 		try {
-			const inputError = ValidateRegistration(req.body);
+			const inputError = ValidateRegistration(body);
 
 			if (inputError.length) return validationError(res, 400, inputError);
 
-			const { user_name, email } = req.body;
+			const { user_name, email } = body;
 
 			const checkUser = await User.findOne({ where: { user_name } });
 
@@ -25,7 +25,7 @@ class userController {
 
 			if (user) throw new Error('Email has already been used');
 
-			const hash = bcrypt.hashSync(req.body.password, 10);
+			const hash = bcrypt.hashSync(body.password, 10);
 			const data = { user_name, email, password: hash };
 
 			const {
@@ -38,13 +38,13 @@ class userController {
 		}
 	}
 
-	static async login(req, res) {
+	static async login({ body }, res) {
 		try {
-			const inputError = validateLogin(req.body);
+			const inputError = validateLogin(body);
 
 			if (inputError.length) return validationError(res, 400, inputError);
 
-			const { user_name, password } = req.body;
+			const { user_name, password } = body;
 			let user = await User.findOne({ where: { email: user_name } });
 			if (!user) user = await User.findOne({ where: { user_name: user_name } });
 
@@ -69,10 +69,8 @@ class userController {
 		}
 	}
 
-	static async getUser(req, res) {
+	static async getUser({ user: { id } }, res) {
 		try {
-			const { id } = req.user;
-			console.log(id);
 			const user = await User.findOne({
 				include: Profile,
 				where: { id },
@@ -84,9 +82,8 @@ class userController {
 		}
 	}
 
-	static async updateProfile(req, res) {
+	static async updateProfile({ user: { id } }, res) {
 		try {
-			const { id } = req.user;
 			const { first_name, last_name, gender, bio } = req.body;
 
 			await Profile.update({ first_name, last_name, gender, bio }, { where: { user_id: id } });
@@ -97,10 +94,8 @@ class userController {
 		}
 	}
 
-	static async updateProfilePhoto(req, res) {
+	static async updateProfilePhoto({ user: { id }, file: { destination, filename } }, res) {
 		try {
-			const { id } = req.user;
-			const { destination, filename } = req.file;
 			const image = destination + filename;
 
 			await Profile.update({ image }, { where: { user_id: id } });
@@ -111,10 +106,8 @@ class userController {
 		}
 	}
 
-	static async deleteUser(req, res) {
+	static async deleteUser({ params: { id } }, res) {
 		try {
-			const { id } = req.params;
-
 			const user = await User.findOne({ where: { id } });
 
 			if (!user) throw new Error('User not found');
@@ -127,9 +120,8 @@ class userController {
 		}
 	}
 
-	static async getUsers(req, res) {
+	static async getUsers({ params: { pageno } }, res) {
 		try {
-			const { pageno } = req.params;
 			const offset = (pageno - 1) * 10;
 			const { count, rows } = await User.findAndCountAll({
 				offset: offset,
@@ -139,8 +131,7 @@ class userController {
 			});
 
 			if (count < 1) throw new Error('Users not found');
-			const data = { totalusers: count, pageno, totalpages: Math.ceil(count / 10), users: rows };
-			success(res, 200, data);
+			success(res, 200, { totalusers: count, pageno, totalpages: Math.ceil(count / 10), users: rows });
 		} catch ({ message: error }) {
 			badRequest(res, 400, error);
 		}

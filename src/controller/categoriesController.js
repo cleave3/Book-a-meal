@@ -1,7 +1,7 @@
 import { Categories } from '../models';
 import Response from '../utils/responseHelper';
 
-const { successMessage, success, badRequest, validationError } = Response;
+const { successMessage, success, badRequest } = Response;
 
 class Categories {
 	static async addCategory({ body: { category_name }, file: { destination, filename } }, res) {
@@ -16,10 +16,8 @@ class Categories {
 		}
 	}
 
-	static async deleteCategory(req, res) {
+	static async deleteCategory({ params: { id } }, res) {
 		try {
-			const { id } = req.params;
-
 			const category = await Categories.findOne({ where: { id } });
 
 			if (!category) throw new Error('Category not found');
