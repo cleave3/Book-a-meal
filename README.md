@@ -7,12 +7,12 @@ This is Book-a-meal version 1
 * Book-A-Meal is an application that allows customers to make  food orders and helps the food vendor know what the customers want to eat.
 
 # Basic features
-* User signup and Login
-* Admin (Carters) can manage menu and set daily menu
-* Users can order meals and modify orders
+* Coming soon
+
+
+
 
 # How to Use the app
-* Navigate to https://cleave3.github.io/Book-a-meal/UI on your browser to view the user interface
-* As a new user, click get started
-* Signup and Login to your profile
-* view daily orders and place your orders
+* Inprogress
+
+
