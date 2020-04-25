@@ -3,7 +3,7 @@ import Response from "../utils/responseHelper";
 
 const { successMessage, success, badRequest } = Response;
 
-class Categories {
+export default class CategoriesController {
   static async addCategory({ body: { category_name }, file: { destination, filename } }, res) {
     try {
       const check = Categories.findOne({ where: { category_name } });
@@ -40,5 +40,3 @@ class Categories {
     }
   }
 }
-
-export default Categories;
